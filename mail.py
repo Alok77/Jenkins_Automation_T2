@@ -6,7 +6,7 @@ sender_email = "my@gmail.com"  # Enter your address
 receiver_email = "your@gmail.com"  # Enter receiver address
 password = input("Type your password and press enter: ")
 message = """\
-Subject: "Model created Success full"
+Subject: "Http Site Is Running!"
 Project is done."""
 
 context = ssl.create_default_context()
