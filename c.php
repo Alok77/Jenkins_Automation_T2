@@ -1,1 +1,5 @@
-hello0php:8089
+<?php
+
+echo "Hello World from php";
+// PHP code goes here
+?>
