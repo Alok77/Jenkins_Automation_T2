@@ -1,0 +1,30 @@
+sudo chroot /var/jenkins_home  /bin/bash <<"EOT"
+cd /git_repository
+echo "ls"
+
+if ls | grep .html
+then
+if sudo docker ps -a| grep myosweb1
+then
+sudo docker rm -f myosweb1
+sudo docker run -i -d -t -p 8088:8080 -v /git_repository:/usr/local/apache2/htdocs/ --name myosweb1 httpd
+else
+sudo docker run -i -d -t -p 8088:8080 -v /git_repository:/usr/local/apache2/htdocs/ --name myosweb1 httpd
+fi
+fi
+
+
+|
+
+if ls | grep .php
+then
+if sudo docker ps -a| grep myosphpweb1
+then
+sudo docker rm -f myosphpweb1
+sudo docker run -i -d -t -p 8088:8080 -v /git_repository:/var/www/html/ --name myosphpweb1 vimal13/apache-webserver-php
+else
+sudo docker run -i -d -t -p 8088:8080 -v /git_repository:/var/www/html/ --name myosphpweb1 vimal13/apache-webserver-php
+fi
+fi
+
+EOT
