@@ -1,0 +1,1 @@
+https://medium.com/analytics-vidhya/automation-of-docker-git-and-github-with-jenkins-a-devops-project-72dda6ee8355

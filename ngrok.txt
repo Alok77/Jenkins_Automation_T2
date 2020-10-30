@@ -1,0 +1,3 @@
+sudo apt install ngrok
+
+ngrok http 8080
